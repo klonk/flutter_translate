@@ -4,7 +4,7 @@ import 'app.dart';
 
 void main() {
   new App(
-          googleApiKey: 'TODO ENTER API KEY',
+          googleApiKey: 'AIzaSyCEcBudDM2zAwf7W2SuDUc_xzVQMzv3xYg',
           baseUri: 'translation.googleapis.com')
       .run(runApp);
 }

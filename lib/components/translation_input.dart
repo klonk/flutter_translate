@@ -5,6 +5,7 @@ import 'package:supernova_translator/models/translation_request.dart';
 
 import 'package:supernova_translator/modules/data_provider.dart';
 import 'package:supernova_translator/modules/translation_bloc.dart';
+import 'package:supernova_translator/services/local_storage/m_local_storage.dart';
 
 import 'lang_picker.dart';
 
@@ -33,7 +34,7 @@ class _TranslationInputState extends State<TranslationInput> {
     controller = new TextEditingController();
     super.initState();
     Future.delayed(Duration.zero, () async {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
+      MLocalStorage prefs = await MLocalStorage.getInstance();
       var srcLang = prefs.getString(srcLangKey);
       var trgLng = prefs.getString(trgLangKey);
 
@@ -67,8 +68,8 @@ class _TranslationInputState extends State<TranslationInput> {
                               });
                               bloc.translate(
                                   createTranslationRequest(controller.text));
-                              SharedPreferences prefs =
-                                  await SharedPreferences.getInstance();
+                              MLocalStorage prefs =
+                                  await MLocalStorage.getInstance();
                               prefs.setString(srcLangKey, lng);
                             },
                           );
@@ -93,8 +94,8 @@ class _TranslationInputState extends State<TranslationInput> {
                             });
                             bloc.translate(
                                 createTranslationRequest(controller.text));
-                            SharedPreferences prefs =
-                                await SharedPreferences.getInstance();
+                            MLocalStorage prefs =
+                                await MLocalStorage.getInstance();
                             prefs.setString(trgLangKey, lng);
                           },
                         );

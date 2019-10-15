@@ -6,6 +6,7 @@ import 'package:supernova_translator/models/lang.dart';
 import 'package:supernova_translator/models/translation.dart';
 import 'package:supernova_translator/models/translation_request.dart';
 import 'package:supernova_translator/modules/seed_languages.dart';
+import 'package:supernova_translator/services/local_storage/m_local_storage.dart';
 
 import '../app.dart';
 
@@ -33,7 +34,7 @@ class TranslationBloc {
 
     favoriteTranslation.add(List<TranslationResponse>());
     Future.delayed(Duration.zero, () async {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
+      MLocalStorage prefs = await MLocalStorage.getInstance();
       var favoriteJson = prefs.getStringList(favoriteKey);
       var storedFavorite = favoriteJson.map((f) {
         var map = json.decode(f);
@@ -98,7 +99,7 @@ class TranslationBloc {
 
   _updateStorage() async {
     var oldVal = this.favoriteTranslation.value;
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    MLocalStorage prefs = await MLocalStorage.getInstance();
     prefs.setStringList(
         favoriteKey, oldVal.map((f) => json.encode(f.toJson())).toList());
   }
