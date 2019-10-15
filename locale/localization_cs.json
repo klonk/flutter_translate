@@ -1,0 +1,17 @@
+{
+    "common": {
+        "translations": "Překlady",
+        "translate": "Přeložit",
+        "favorite": "Oblíbené",
+        "detect_label": "Detekovaný jazyk"
+    },
+    "settings": {
+        "select_language": "Jazyk",
+        "en": "English",
+        "cs": "Česky",
+        "de": "Deutsch",
+        "settings": "Nastavení",
+        "user_profile": "Profil",
+        "sign_out": "Odhlásit"
+    }
+}

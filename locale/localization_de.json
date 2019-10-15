@@ -1,0 +1,17 @@
+{
+    "common": {
+        "translations": "Übersetzung",
+        "translate": "Übersetzen",
+        "favorite": "Lieblings",
+        "detect_label": "Erkannte Sprache"
+    },
+    "settings": {
+        "select_language": "Sprache",
+        "en": "English",
+        "cs": "Česky",
+        "de": "Deutsch",
+        "settings": "Einstellungen",
+        "user_profile": "Profil",
+        "sign_out": "Abmelden"
+    }
+}
