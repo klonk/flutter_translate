@@ -35,7 +35,7 @@ class _AppWidgetState extends State<AppWidget> {
           GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: App.supportedLocales(),
-        title: 'Manapipes',
+        title: 'Supernova Translator',
         home: StartPage(),
       ),
     );
